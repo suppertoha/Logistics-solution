@@ -291,7 +291,7 @@ const tlNews = gsap.timeline({
     end: "100%",
     // scrub: true,
       once: true,
-    markers: true,
+    //markers: true,
     onEnter: () => {
       tlProduction
       .to(

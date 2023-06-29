@@ -1,6 +1,8 @@
 .main-section {
   min-height: 540px;
   position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
   &__bg {
     position: absolute;
     z-index: -1;

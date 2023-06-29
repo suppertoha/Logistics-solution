@@ -45,12 +45,12 @@
       top: 0px;
       background: #F4F4F4;
       z-index: -1;
-      width: 500%;
+      width: 700%;
     }
 
     @include min1024 {
       &::before{
-        left: -150%;
+        left: -250%;
       }
     }
   }

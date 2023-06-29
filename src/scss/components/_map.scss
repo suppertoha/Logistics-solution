@@ -1,4 +1,5 @@
 .map {
+  position: relative;
   &__inner {
     @include max1366 {
       flex-direction: column;
@@ -32,8 +33,18 @@
 }
 
 .nav-map {
+  position: relative;
+  @include min1366 {
+    min-height: 548px;
+  }
+
   &__items {
-    position: relative;
+    @include min1366 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: -1000%;
+    }
   }
 
   &__item {
@@ -54,6 +65,17 @@
     @include min1366 {
       min-height: 100px;
       position: relative;
+      justify-content: flex-end;
+    }
+  }
+
+  &__body{
+    @include min1366 {
+      width: 275px;
+    }
+
+    @include min1600 {
+      width: 345px;
     }
   }
 
@@ -86,7 +108,6 @@
 
   &__info {
     height: 90px;
-    overflow: hidden;
     .nav-map-animate{
       transform: translateY(-100%);
       position: relative;
@@ -98,15 +119,27 @@
       font-weight: 600;
       line-height: 148.523%;
       text-transform: uppercase;
-      padding: 20px 10px;
+      padding: 20px;
       display: flex;
       align-items: center;
       height: 100%;
+
+      @include min1366 {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
 
     .nav-map__bg{
       z-index: -1;
       background: var(--unnamed, #222123);
+    }
+
+    @include min1366 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: -1000%;
     }
   }
 
@@ -254,9 +287,8 @@
   position: relative;
 
   &.active{
-    .nav-map__bg {
-      background: var(--1, #003564);
-    }
+    background: var(--1, #003564);
+
     .nav-map__adres{
       color: #fff;
     }
