@@ -33,7 +33,9 @@
       &:hover{
         .work__item{
           &:last-child{
-            background: var(--1, #003564);
+            .work__animation{
+              background: var(--1, #003564);
+            }
           }
         }
       }
@@ -58,7 +60,8 @@
   }
 
   &__animation{
-    //transform: translateX(-250%);
+    transform: translateX(-100%);
+    transition: 0.3s;
     opacity: 0;
     width: 100%;
     height: 100%;
