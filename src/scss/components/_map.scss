@@ -1,0 +1,296 @@
+.map {
+  &__inner {
+    @include max1366 {
+      flex-direction: column;
+
+      .main-layout__right{
+        width: 100%;
+      }
+
+      .map__left{
+        width: 100%;
+      }
+    }
+  }
+
+  &__title{
+    overflow: hidden;
+  }
+
+  &__left {
+    margin-bottom: 30px;
+  }
+
+  &__animate{
+    transform: translateX(-100%);
+  }
+
+}
+
+.nav-map-animate{
+  transform: translateY(-100%);
+}
+
+.nav-map {
+  &__items {
+    position: relative;
+  }
+
+  &__item {
+    position: relative;
+    overflow-y: hidden;
+    &:not(:last-child) {
+      margin-bottom: 1px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    padding: 20px;
+    min-height: 93px;
+    flex-shrink: 0;
+    background: var(--unnamed, #f4f4f4);
+
+    @include min1366 {
+      min-height: 100px;
+      position: relative;
+    }
+  }
+
+  &__icon {
+    margin-right: 15px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    span {
+      color: var(--unnamed, #8c8c8c);
+      font-size: 16px;
+      font-family: Inter;
+      line-height: 148.523%;
+    }
+  }
+
+  &__adres {
+    color: var(--unnamed, #222123);
+    font-size: 16px;
+    font-family: Inter;
+    line-height: 148.523%;
+    margin-bottom: 3px;
+  }
+
+
+  &__info {
+    height: 90px;
+    overflow: hidden;
+    .nav-map-animate{
+      transform: translateY(-100%);
+      position: relative;
+      z-index: 2;
+      background: var(--unnamed, #222123);
+      color: var(--unnamed, #fff);
+      font-size: 16px;
+      font-family: Inter;
+      font-weight: 600;
+      line-height: 148.523%;
+      text-transform: uppercase;
+      padding: 20px 10px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-map__bg{
+      z-index: -1;
+      background: var(--unnamed, #222123);
+    }
+  }
+
+
+
+  &__bg{
+    @include min1366 {
+      position: absolute;
+      transition: 0.3s;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform: translate(-50%, 0%);
+      right: 0;
+      top: 0px;
+      background: #F4F4F4;
+      z-index: 1;
+      width: 500%;
+      left: -150%;
+    }
+  }
+}
+
+.block-map {
+  &__inner {
+    @include min768 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__animate{
+
+  }
+
+  &__items {
+    position: relative;
+  }
+
+
+  &__body {
+    position: relative;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 18px;
+    font-family: Inter;
+    line-height: 148.523%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__description {
+    overflow: hidden;
+    @include min768 {
+      display: inline-block;
+      width: 33.3333%;
+      margin-top: -120px;
+      margin-left: auto;
+    }
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    &:not(:last-child){
+      margin-bottom: 10px;
+    }
+
+    &:nth-child(1){
+      .block-map__el .block-map__animate{
+        background: var(--unnamed, #E85022);
+      }
+    }
+
+    &:nth-child(2){
+      .block-map__el .block-map__animate{
+        background: var(--2, #FF9778);
+      }
+    }
+
+    &:nth-child(3){
+      .block-map__el .block-map__animate{
+        background: var(--3, #FFC3B1);
+      }
+    }
+  }
+
+  &__el {
+    overflow: hidden;
+    .block-map__animate{
+      width: 36px;
+      height: 20px;
+      margin-right: 10px;
+
+      @include min768 {
+        width: 54px;
+        height: 30px;
+      }
+    }
+  }
+
+  &__text {
+    color: var(--unnamed, #434344);
+    font-size: 14px;
+    font-family: Inter;
+    line-height: 148.523%;
+    overflow: hidden;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+
+.map-mobi {
+  @include min768 {
+    display: none;
+  }
+}
+
+.map-pc {
+  display: none;
+  @include min768 {
+    display: flex;
+  }
+}
+
+.main-btn{
+  transition: 0.3s;
+  position: relative;
+
+  &.active{
+    .nav-map__bg {
+      background: var(--1, #003564);
+    }
+    .nav-map__adres{
+      color: #fff;
+    }
+  }
+}
+
+.main-el{
+  transition: 0.3s;
+
+  &.active{
+    fill: #C9C9C9;
+  }
+}
+
+.main-map{
+  opacity: 0;
+  path{
+    transition: 0.3s;
+  }
+
+  &.active {
+    path {
+      fill: #C9C9C9;
+
+      &[fill="white"] {
+        fill: #fff;
+      }
+    }
+
+    .main-el{
+      fill: #8C8C8C;
+      &.active{
+        fill: #E85022;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.counter {
+  &__inner {
+    padding: 40px 0 0;
+    display: grid;
+    grid-gap: 60px 30px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include max375 {
+      grid-gap: 40px 15px;
+    }
+
+    @include min600 {
+      grid-template-columns: repeat(3, 1fr);
+      //background: #fcfcfc;
+      grid-gap: 0px;
+      padding: 0;
+
+      //border-right: 1px solid #f4f4f4;
+      //border-left: 1px solid #f4f4f4;
+      height: 100%;
+    }
+
+    @include min1366 {
+      grid-gap: 0;
+    }
+  }
+
+  &__item {
+    opacity: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @include min600 {
+      align-self: center;
+      padding: 0px 15px 0px;
+      &:not(:last-child) {
+        //border-right: 1px solid #f4f4f4;
+      }
+
+      &:nth-child(-n + 3) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+
+      &:nth-child(n + 4):nth-child(-n + 6) {
+        //padding-bottom: 100px;
+      }
+    }
+
+    @include min1366 {
+      padding: 0px 40px 0px;
+      &:not(:last-child) {
+        //border-right: 1px solid #f4f4f4;
+      }
+
+      &:nth-child(-n + 3) {
+        padding-top: 50px;
+      }
+
+      &:nth-child(n + 4):nth-child(-n + 6) {
+        padding-bottom: 50px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include min1600 {
+      padding: 0px 50px 0px;
+    }
+  }
+
+  &__text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #434344;
+
+    @include max375 {
+      font-size: 12px;
+    }
+
+    @include min1366 {
+      font-size: 16px;
+    }
+  }
+
+  &__count {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #e85022;
+    margin-bottom: 10px;
+    display: inline-block;
+
+    @include max375 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    @include min768 {
+      font-size: 30px;
+    }
+
+    @include min1366 {
+      font-size: 36px;
+    }
+
+    @include min1600 {
+      font-size: 40px;
+    }
+  }
+
+  &__mr {
+    margin-right: 5px;
+  }
+}

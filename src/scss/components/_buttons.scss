@@ -1,0 +1,31 @@
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.btn-orange{
+  background: #E85022;
+  color: #FFFFFF;
+
+  @include min1024 {
+    &:hover{
+      background:#003564;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.btn-border{
+  border: 1px solid #222123;
+  @include min1024 {
+    &:hover{
+      background:#003564;
+      color: #FFFFFF;
+    }
+  }
+}
+

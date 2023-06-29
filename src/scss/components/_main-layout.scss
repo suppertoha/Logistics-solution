@@ -1,0 +1,57 @@
+.main-layout {
+  &:not(:last-child) {
+    margin-bottom: 80px;
+  }
+
+  @include min768 {
+    &:not(:last-child) {
+      margin-bottom: 120px;
+    }
+  }
+
+  @include min1366 {
+    &:not(:last-child) {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__flex {
+    @include min1024 {
+      display: flex;
+    }
+  }
+
+  &__left {
+    @include min1024 {
+      width: 25%;
+    }
+  }
+
+  &__right {
+    @include min1024 {
+      width: 75%;
+    }
+  }
+
+  &--overflow{
+    overflow: hidden;
+  }
+}
+
+.main-layout--border-top {
+  border-top: 1px solid #f2f2f2;
+}
+
+.block-wrapper {
+  position: relative;
+
+  padding-bottom: 80px;
+
+  @include min768 {
+    padding-bottom: 120px;
+  }
+
+  @include min1366 {
+    padding-bottom: 140px;
+  }
+}
