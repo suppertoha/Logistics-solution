@@ -60,12 +60,20 @@ Swiper.use([Navigation, Pagination, Scrollbar, Autoplay]);
 //});
 
 // JavaScript код
-function moveImages() {
-  currentOffset += 1; // Измените знак на плюс
-  if (currentOffset > totalWidth) { // Измените условие
-    currentOffset = 0;
-    marqueeInner.insertBefore(images[images.length - 1], images[0]); // Используйте insertBefore вместо appendChild
-  }
-  marqueeInner.style.transform = `translateX(-${currentOffset}px)`; // Измените знак на минус
-  requestAnimationFrame(moveImages);
-}
+//function moveImages() {
+//  currentOffset += 1; // Измените знак на плюс
+//  if (currentOffset > totalWidth) { // Измените условие
+//    currentOffset = 0;
+//    marqueeInner.insertBefore(images[images.length - 1], images[0]); // Используйте insertBefore вместо appendChild
+//  }
+//  marqueeInner.style.transform = `translateX(-${currentOffset}px)`; // Измените знак на минус
+//  requestAnimationFrame(moveImages);
+//}
+
+window.addEventListener('load', function() {
+  var firstHalf = document.querySelector('.ticker-wrapper__first-half');
+  var secondHalf = document.querySelector('.ticker-wrapper__second-half');
+
+  firstHalf.style.animationPlayState = 'running';
+  secondHalf.style.animationPlayState = 'running';
+});

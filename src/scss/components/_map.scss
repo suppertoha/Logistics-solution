@@ -23,13 +23,15 @@
   }
 
   &__animate{
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-10px);
   }
 
 }
 
 .nav-map-animate{
-  transform: translateY(-100%);
+  opacity: 0;
+  transform: translateY(-5px);
 }
 
 .nav-map {

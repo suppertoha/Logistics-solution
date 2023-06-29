@@ -352,28 +352,28 @@ tlMain.fromTo(".header", {
   opacity: 1,
   x: 0,
   duration: 0.35
-}).fromTo(".animation-search__icon-start", {
+}, "=-1").fromTo(".animation-search__icon-start", {
   opacity: 0,
   scale: 0
 }, {
   opacity: 1,
   scale: 1,
   duration: 0.15
-}).fromTo(".animation-search__hidden", {
+}, "=-0.8").fromTo(".animation-search__hidden", {
   opacity: 0,
   width: "0%"
 }, {
   opacity: 1,
   width: "100%",
   duration: 0.7
-}).fromTo(".animation-search__icon-end", {
+}, "=-0.8").fromTo(".animation-search__icon-end", {
   opacity: 0,
   scale: 0
 }, {
   opacity: 1,
   scale: 1,
   duration: 0.35
-});
+}, "=-0.3");
 //? End header + main-section
 
 //! bg
@@ -476,14 +476,15 @@ const tlAccordion = gsap.timeline({
       tlAccordion.to(".services__title", {
         x: 0,
         opacity: 1,
-        duration: 0.7,
+        duration: 0.2,
         ease: "sine.out"
       });
       tlParallel.to(accordionItems, {
         y: '0',
-        duration: 0.7,
+        opacity: 1,
+        duration: 0.3,
         ease: "sine.out"
-      });
+      }, "=-4");
       const sectionBg = document.querySelector(".section-bg");
       const tl = gsap.timeline();
       tl.to(sectionBg, {
@@ -503,7 +504,7 @@ const newsItems = document.querySelectorAll(".block-news__animation--top");
 const tlProduction = gsap.timeline({
   scrollTrigger: {
     trigger: ".block-news--top",
-    start: "top-=100% top+=400",
+    start: "top-=130% top+=400",
     end: "300%",
     // scrub: true,
     once: true,
@@ -511,11 +512,13 @@ const tlProduction = gsap.timeline({
     onEnter: () => {
       tlProduction.to(".block-news__title--top", {
         x: 0,
-        duration: .7,
+        opacity: 1,
+        duration: .9,
         ease: "sine.out"
-      }).to(newsItems, {
+      }, "=-4").to(newsItems, {
         x: 0,
-        duration: .7,
+        opacity: 1,
+        duration: .6,
         ease: "sine.out"
       });
     }
@@ -529,7 +532,7 @@ const mapItems = document.querySelectorAll(".nav-map-animate");
 const tlMap = gsap.timeline({
   scrollTrigger: {
     trigger: ".map",
-    start: "top-=10% top+=400",
+    start: "top-=50% top+=400",
     end: "100%",
     once: true,
     //markers: true,
@@ -537,18 +540,19 @@ const tlMap = gsap.timeline({
     onEnter: () => {
       tlMap.to(".map__animate", {
         x: 0,
-        duration: 0.7,
+        opacity: 1,
+        duration: 0.4,
         ease: "sine.out"
       }).to(mapItems, {
         opacity: 1,
         y: '0',
-        duration: 0.7,
+        duration: 0.4,
         ease: "sine.out"
-      }).to(".main-map", {
+      }, "=-0.5").to(".main-map", {
         opacity: 1,
-        duration: 0.7,
+        duration: 0.4,
         ease: "sine.out"
-      });
+      }), "=-0.6";
     }
   }
 });
@@ -556,35 +560,21 @@ const tlMap = gsap.timeline({
 //? tlMap
 
 //! tlSlider
-const sliderItemFirst = document.querySelector('.slider__item--first');
-const sliderItemSecond = document.querySelector('.slider__item--second');
+
 const tlSlider = gsap.timeline({
   scrollTrigger: {
     trigger: ".slider",
-    start: "top+=20% top+=400",
+    start: "top-=100% top+=400",
     end: "100%",
     once: true,
-    markers: true,
+    //markers: true,
     onEnter: () => {
-      const animationTitle = gsap.timeline();
-      const animationGroup = gsap.timeline();
       tlSlider.to(".slider__title", {
         x: 0,
-        duration: 0.7,
+        opacity: 1,
+        duration: 0.3,
         ease: "sine.out"
       });
-      animationGroup.to(sliderItemFirst, {
-        x: '0%',
-        duration: 0.7,
-        ease: "sine.out"
-      }, 0);
-      animationGroup.to(sliderItemSecond, {
-        x: '0%',
-        duration: 0.7,
-        ease: "sine.out"
-      }, 0);
-      animationTitle.play();
-      setTimeout(animationGroup.play(), 1800);
     }
   }
 });
@@ -604,11 +594,13 @@ const tlNews = gsap.timeline({
     onEnter: () => {
       tlProduction.to(".block-news__title--bottom", {
         x: 0,
-        duration: 0.7,
+        duration: 0.4,
+        opacity: 1,
         ease: "sine.out"
       }).to(newsItemsBottom, {
         x: 0,
-        duration: 0.7,
+        duration: 0.4,
+        opacity: 1,
         ease: "sine.out"
       });
     }
@@ -632,12 +624,12 @@ const tlWork = gsap.timeline({
       tlProduction.to(".work__title", {
         x: 0,
         opacity: 1,
-        duration: 0.7,
+        duration: 0.4,
         ease: "sine.out"
       }).to(workItems, {
         x: 0,
         opacity: 1,
-        duration: 0.7,
+        duration: 0.4,
         ease: "sine.out"
       });
     }
@@ -879,17 +871,22 @@ swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MOD
 //});
 
 // JavaScript код
-function moveImages() {
-  currentOffset += 1; // Измените знак на плюс
-  if (currentOffset > totalWidth) {
-    // Измените условие
-    currentOffset = 0;
-    marqueeInner.insertBefore(images[images.length - 1], images[0]); // Используйте insertBefore вместо appendChild
-  }
+//function moveImages() {
+//  currentOffset += 1; // Измените знак на плюс
+//  if (currentOffset > totalWidth) { // Измените условие
+//    currentOffset = 0;
+//    marqueeInner.insertBefore(images[images.length - 1], images[0]); // Используйте insertBefore вместо appendChild
+//  }
+//  marqueeInner.style.transform = `translateX(-${currentOffset}px)`; // Измените знак на минус
+//  requestAnimationFrame(moveImages);
+//}
 
-  marqueeInner.style.transform = `translateX(-${currentOffset}px)`; // Измените знак на минус
-  requestAnimationFrame(moveImages);
-}
+window.addEventListener('load', function () {
+  var firstHalf = document.querySelector('.ticker-wrapper__first-half');
+  var secondHalf = document.querySelector('.ticker-wrapper__second-half');
+  firstHalf.style.animationPlayState = 'running';
+  secondHalf.style.animationPlayState = 'running';
+});
 
 /***/ }),
 

@@ -12,7 +12,8 @@
   }
 
   &__title {
-    transform: translateX(-100%);
+    transform: translateX(-10px);
+    opacity: 0;
     @include min768 {
       width: 33.3333%;
     }
@@ -60,7 +61,8 @@
   }
 
   &__animation{
-    transform: translateX(-100%);
+    transform: translateX(-10px);
+    opacity: 0;
     transition: 0.3s;
     opacity: 0;
     width: 100%;

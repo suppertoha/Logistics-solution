@@ -2,7 +2,7 @@
   overflow: hidden;
   margin-top: 80px;
   &__title{
-    transform: translateX(-100%);
+    transform: translateX(-50px);
     @include max768 {
       margin-left: 15px;
     }
@@ -49,15 +49,29 @@
   }
 
   &__item {
-    transform: translateY(-250px);
+    transform: translateY(-10px);
+    opacity: 0;
     background: #222123;
     display: flex;
     transition: 0.3s;
     overflow: hidden;
     min-height: 98px;
+
+    @include min1024 {
+      &:hover{
+        .header-accordion__block{
+          background: #003564;
+        }
+
+        .header-accordion__arrow{
+          background: #1F4D77;
+        }
+      }
+    }
   }
 
   &__block{
+    transition: 0.3s;
     padding: 25px 10px 25px 15px;
     flex-grow: 1;
     @include min768 {
@@ -106,6 +120,7 @@
   }
 
   &__arrow {
+    transition: 0.3s;
     background: rgba(255, 255, 255, 0.12);
     width: 100px;
     display: flex;

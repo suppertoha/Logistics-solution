@@ -32,6 +32,7 @@ function mainCounter() {
   }
 }
 
+
 //! header + main-section
 const sectionBg = document.querySelector(".main-section__bg");
 
@@ -51,23 +52,27 @@ tlMain
   .fromTo(
     ".main-section__description",
     { opacity: 0, x: -50 },
-    { opacity: 1, x: 0, duration: 0.35 }
+    { opacity: 1, x: 0, duration: 0.35 },
+    "=-1"
   )
   .fromTo(
     ".animation-search__icon-start",
     { opacity: 0, scale: 0 },
-    { opacity: 1, scale: 1, duration: 0.15 }
+    { opacity: 1, scale: 1, duration: 0.15 },
+    "=-0.8"
   )
   .fromTo(
     ".animation-search__hidden",
     { opacity: 0, width: "0%" },
-    { opacity: 1, width: "100%", duration: 0.7 }
+    { opacity: 1, width: "100%", duration: 0.7 },
+    "=-0.8"
   )
   .fromTo(
     ".animation-search__icon-end",
     { opacity: 0, scale: 0 },
-    { opacity: 1, scale: 1, duration: 0.35 }
-);
+    { opacity: 1, scale: 1, duration: 0.35 },
+    "=-0.3"
+  );
 //? End header + main-section
 
 
@@ -108,11 +113,13 @@ ScrollTrigger.create({
   //markers: true,
   onEnter: () => {
     tlCounter
+
     .fromTo(
       mainCount,
       {  opacity: 0 },
       {  opacity: 1, duration: 0.1 }
     )
+
     .fromTo(
       ".about__bg",
       { x: '-100%',opacity: 0  },
@@ -176,11 +183,11 @@ const tlAccordion = gsap.timeline({
 
       tlAccordion.to(
         ".services__title",
-        { x: 0, opacity: 1, duration: 0.7, ease: "sine.out"  }
+        { x: 0, opacity: 1, duration: 0.2, ease: "sine.out"  }
       );
       tlParallel.to(
         accordionItems,
-        { y: '0', duration: 0.7, ease: "sine.out" }
+        { y: '0', opacity: 1, duration: 0.3, ease: "sine.out" },"=-4"
       );
 
       const sectionBg = document.querySelector(".section-bg");
@@ -205,7 +212,7 @@ const newsItems = document.querySelectorAll(".block-news__animation--top");
 const tlProduction = gsap.timeline({
   scrollTrigger: {
     trigger: ".block-news--top",
-    start: "top-=100% top+=400",
+    start: "top-=130% top+=400",
     end: "300%",
     // scrub: true,
       once: true,
@@ -214,11 +221,11 @@ const tlProduction = gsap.timeline({
       tlProduction
       .to(
         ".block-news__title--top",
-        { x: 0, duration: .7, ease: "sine.out" }
+        { x: 0, opacity: 1, duration: .9, ease: "sine.out" },"=-4"
       )
         .to(
         newsItems,
-        { x: 0, duration: .7, ease: "sine.out" }
+        { x: 0, opacity: 1, duration: .6, ease: "sine.out" }
       );
     }
   },
@@ -232,19 +239,19 @@ const mapItems = document.querySelectorAll(".nav-map-animate");
 const tlMap = gsap.timeline({
   scrollTrigger: {
     trigger: ".map",
-    start: "top-=10% top+=400",
+    start: "top-=50% top+=400",
     end: "100%",
     once: true,
     //markers: true,
 
     onEnter: () => {
       tlMap
-        .to(".map__animate", { x: 0, duration: 0.7, ease: "sine.out" })
+        .to(".map__animate", { x: 0, opacity: 1, duration: 0.4, ease: "sine.out" })
         .to(
           mapItems,
-          { opacity: 1, y: '0', duration: 0.7, ease: "sine.out" }
+          { opacity: 1, y: '0', duration: 0.4, ease: "sine.out" },"=-0.5"
         )
-        .to(".main-map", { opacity: 1, duration: 0.7, ease: "sine.out" });
+        .to(".main-map", { opacity: 1, duration: 0.4, ease: "sine.out" }),"=-0.6";
 
     }
   },
@@ -253,26 +260,17 @@ const tlMap = gsap.timeline({
 //? tlMap
 
 //! tlSlider
-const sliderItemFirst = document.querySelector('.slider__item--first');
-const sliderItemSecond = document.querySelector('.slider__item--second');
 
 const tlSlider = gsap.timeline({
   scrollTrigger: {
     trigger: ".slider",
-    start: "top+=20% top+=400",
+    start: "top-=100% top+=400",
     end: "100%",
     once: true,
-    markers: true,
+    //markers: true,
     onEnter: () => {
-      const animationTitle = gsap.timeline();
-      const animationGroup = gsap.timeline();
 
-      tlSlider.to(".slider__title", { x: 0, duration: 0.7, ease: "sine.out" });
-      animationGroup.to(sliderItemFirst, { x: '0%', duration: 0.7, ease: "sine.out" }, 0);
-      animationGroup.to(sliderItemSecond, { x: '0%', duration: 0.7, ease: "sine.out" }, 0);
-
-      animationTitle.play();
-      setTimeout(animationGroup.play(), 1800);
+      tlSlider.to(".slider__title", { x: 0, opacity:1, duration: 0.3, ease: "sine.out" });
 
     }
   },
@@ -296,11 +294,11 @@ const tlNews = gsap.timeline({
       tlProduction
       .to(
         ".block-news__title--bottom",
-        { x: 0, duration: 0.7, ease: "sine.out" }
+        { x: 0, duration: 0.4, opacity:1, ease: "sine.out" }
       )
         .to(
           newsItemsBottom,
-        { x: 0, duration: 0.7, ease: "sine.out" }
+        { x: 0, duration: 0.4,opacity:1, ease: "sine.out" }
       );
     }
   },
@@ -325,11 +323,11 @@ const tlWork = gsap.timeline({
       tlProduction
       .to(
         ".work__title",
-        { x: 0, opacity: 1, duration: 0.7, ease: "sine.out" }
+        { x: 0, opacity: 1, duration: 0.4, ease: "sine.out" }
       )
         .to(
           workItems,
-        { x: 0, opacity: 1, duration: 0.7, ease: "sine.out" }
+        { x: 0, opacity: 1, duration: 0.4, ease: "sine.out" }
       );
     }
   },
