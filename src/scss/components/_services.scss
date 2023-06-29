@@ -352,6 +352,11 @@
       @include min1366 {
         grid-template-columns: repeat(6, 1fr);
       }
+
+      >div{
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }

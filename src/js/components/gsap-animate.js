@@ -1,5 +1,5 @@
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 //ScrollSmoother.create({
 //  wrapper: '.site-container',
@@ -259,10 +259,10 @@ const sliderItemSecond = document.querySelector('.slider__item--second');
 const tlSlider = gsap.timeline({
   scrollTrigger: {
     trigger: ".slider",
-    start: "top-=80% top+=400",
+    start: "top+=20% top+=400",
     end: "100%",
     once: true,
-    //markers: true,
+    markers: true,
     onEnter: () => {
       const animationTitle = gsap.timeline();
       const animationGroup = gsap.timeline();
