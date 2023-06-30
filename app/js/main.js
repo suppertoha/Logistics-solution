@@ -390,12 +390,11 @@ const tl = gsap.timeline({
     }
   }
 });
-tl.to(sectionBg, {
-  x: -100,
-  y: -50,
-  duration: 0.7,
-  ease: "power1.out"
-});
+
+//tl.to(
+//  sectionBg,
+//  { x: -100, y: -50, duration: 0.7, ease: "power1.out" }
+//);
 //? bg
 
 //! tlCounter
@@ -486,11 +485,13 @@ const tlAccordion = gsap.timeline({
         ease: "sine.out"
       }, "=-4");
       const tl = gsap.timeline();
-      tl.to(".main-section__bg", {
-        x: 0,
-        y: 0,
-        ease: "sine.out"
-      });
+      //if (screenWidth > 1024) {
+      //  tl.to(
+      //    ".main-section__bg",
+      //    { x: 0, y: 0, ease: "sine.out" }
+      //  );
+      //}
+
       gsap.timeline().add(tlAccordion).add(tlParallel);
     }
   }

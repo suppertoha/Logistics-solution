@@ -121,6 +121,9 @@
       flex-direction: column;
       justify-content: center;
       background: var(--unnamed, #F4F4F4);
+      @include max375 {
+        padding: 10px;
+      }
 
       @include min1024 {
         padding: 30px;

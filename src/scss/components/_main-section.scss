@@ -1,13 +1,14 @@
 .main-section {
   min-height: 540px;
   position: relative;
-  
+
   &__bg {
     position: absolute;
     z-index: -1;
     left: 0;
     top: 0;
     opacity: 0;
+
     img{
       max-height: 470px;
 
@@ -22,6 +23,10 @@
       //@include min1600 {
       //  max-height: 670px;
       //}
+    }
+
+    @include min1024 {
+      transform: translate(0) !important;
     }
   }
 
