@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 //})
 
 const counters = document.querySelectorAll('.count');
-const speed = 10;
+const speed = 30;
 
 function mainCounter() {
   counters.forEach((counter) => {
@@ -270,7 +270,7 @@ const tlSlider = gsap.timeline({
     //markers: true,
     onEnter: () => {
 
-      tlSlider.to(".slider__title", { x: 0, opacity:1, duration: 0.3, ease: "sine.out" });
+      tlSlider.to(".main-slider__title", { x: 0, opacity:1, duration: 0.3, ease: "sine.out" });
 
     }
   },
