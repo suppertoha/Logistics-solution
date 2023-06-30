@@ -93,7 +93,7 @@ const tl = gsap.timeline({
 
 tl.to(
   sectionBg,
-  { x: -200, y: -100, duration: 0.7, ease: "power1.out" }
+  { x: -100, y: -50, duration: 0.7, ease: "power1.out" }
 );
 //? bg
 
@@ -190,11 +190,10 @@ const tlAccordion = gsap.timeline({
         { y: '0', opacity: 1, duration: 0.3, ease: "sine.out" },"=-4"
       );
 
-      const sectionBg = document.querySelector(".section-bg");
       const tl = gsap.timeline();
 
       tl.to(
-        sectionBg,
+        ".main-section__bg",
         { x: 0, y: 0, ease: "sine.out" }
       );
 
