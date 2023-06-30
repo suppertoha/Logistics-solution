@@ -171,15 +171,22 @@
       height: 100%;
     }
     height: 40px;
-    position: absolute;
     z-index: 2;
+
+    position: absolute;
     left: 11px;
     top: 55px;
+    flex-shrink: 0;
+    //min-height: 40px;
+    //margin-top: 100px;
+    //margin-left: 100px;
+
 
     @include min768 {
       height: 62px;
       left: 45px;
       top: 20px;
+      min-height: 62px;
     }
 
     @include min1366 {
@@ -212,7 +219,7 @@
 
   &__icon-end {
     opacity: 0;
-
+    flex-shrink: 0;
     img {
       width: 100%;
       height: 100%;
@@ -224,11 +231,13 @@
     top: 0;
     right: -7px;
     top: -87px;
+    min-height: 88px;
 
     @include min768 {
       height: 180px;
       right: 0px;
       top: -180px;
+      min-height: 180px;
     }
 
 

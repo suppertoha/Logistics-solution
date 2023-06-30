@@ -8,7 +8,7 @@
   background-color: #fff;
   z-index: 1000;
   border-bottom: 1px solid #F2F2F2;
-
+  position: relative;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -22,7 +22,6 @@
 
     @include min1024 {
       padding: 20px 0;
-      position: relative;
     }
   }
 
