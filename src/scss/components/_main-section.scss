@@ -171,6 +171,7 @@
       height: 100%;
     }
     height: 40px;
+    width: 31px;
     z-index: 2;
 
     position: absolute;
@@ -225,6 +226,7 @@
       height: 100%;
     }
     height: 88px;
+    width: 68px;
     position: absolute;
     z-index: 2;
     right: 0;
@@ -235,6 +237,7 @@
 
     @include min768 {
       height: 180px;
+      width: 140px;
       right: 0px;
       top: -180px;
       min-height: 180px;

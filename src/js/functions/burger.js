@@ -3,7 +3,27 @@
   const menu = document.querySelector("[data-menu]");
   const menuItems = document.querySelectorAll("[data-menu-item]");
   const overlay = document.querySelector("[data-menu-overlay]");
-  const headerMenu = document.querySelectorAll('.header__list--mobile .header__link')
+  const headerMenu = document.querySelectorAll('.header__list--mobile .header__link');
+  const pageBody = document.querySelector(".page__body");
+
+  function preventScroll() {
+    // Получаем текущую позицию прокрутки страницы
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Устанавливаем body в position: fixed и top в отрицательное значение текущей позиции прокрутки
+    pageBody.style.position = 'fixed';
+    pageBody.style.top = -scrollTop + 'px';
+  }
+
+  function restoreScroll() {
+    // Получаем текущее значение top из стиля элемента "pageBody"
+    const top = parseInt(pageBody.style.top, 10);
+
+    // Восстанавливаем скролл страницы
+    pageBody.style.position = '';
+    pageBody.style.top = '';
+    window.scrollTo(0, -top);
+  }
 
   if (burger) {
     burger.addEventListener("click", (e) => {
@@ -15,15 +35,22 @@
 
         // Добавляем класс "active" к элементу "body"
         document.body.classList.add("active");
+
+        // Отключаем скролл страницы
+        preventScroll();
       } else {
         burger.setAttribute("aria-expanded", "false");
         burger.setAttribute("aria-label", "Открыть меню");
 
         // Удаляем класс "active" из элемента "body"
         document.body.classList.remove("active");
+
+        // Восстанавливаем скролл страницы
+        restoreScroll();
       }
     });
   }
+
   if (overlay) {
     overlay.addEventListener("click", () => {
       closeMenu();
@@ -56,6 +83,9 @@
     burger.classList.remove("burger--active");
     menu.classList.remove("menu--active");
     document.body.classList.remove("active");
+
+    // Восстанавливаем скролл страницы
+    restoreScroll();
   }
 
   if (headerMenu.length > 0) {
@@ -68,3 +98,18 @@
     });
   }
 })();
+
+(function () {
+  const jsLinks = document.querySelectorAll(".js-link");
+  const pageBody = document.querySelector(".page__body");
+
+  if (jsLinks.length > 0) {
+    jsLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Изменяем свойство position у элементов с классом page__body
+        pageBody.style.position = "static";
+      });
+    });
+  }
+})();
+
