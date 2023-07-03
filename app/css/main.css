@@ -576,10 +576,7 @@ input::-webkit-inner-spin-button {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .burger.burger--active {
-  position: absolute;
   z-index: 101;
-  right: 15px;
-  top: 16px;
 }
 .burger.burger--active::before, .burger.burger--active::after {
   background: #222123;

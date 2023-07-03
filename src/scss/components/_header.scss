@@ -270,14 +270,8 @@
 .burger {
   @include burger;
 
-  &__line {
-  }
-
   &.burger--active {
-    position: absolute;
     z-index: 101;
-    right: 15px;
-    top: 16px;
     &::before,
     &::after {
       background: #222123;
