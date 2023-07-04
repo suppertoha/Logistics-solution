@@ -1024,7 +1024,7 @@ input::-webkit-inner-spin-button {
 @media (min-width: 768px) {
   .animation-search__icon-end {
     height: 180px;
-    width: 139px;
+    width: 141px;
     right: 0px;
     top: -180px;
     min-height: 180px;
@@ -1527,6 +1527,15 @@ input::-webkit-inner-spin-button {
 .accordion__item:not(:last-child) {
   margin-bottom: 2px;
 }
+@media (min-width: 1024px) {
+  .accordion__header.open:hover .header-accordion__block {
+    background: var(--unnamed, #E85022);
+  }
+  .accordion__header.open:hover .header-accordion__arrow {
+    background: #EB653D;
+  }
+}
+
 .block-line {
   position: absolute;
   top: 0;
@@ -1590,7 +1599,7 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width: 1366px) {
   .body-services__inner {
-    padding-top: 40px 20px;
+    padding-top: 40px;
   }
 }
 .body-services__inner h3 {
@@ -1761,6 +1770,13 @@ input::-webkit-inner-spin-button {
   background: #E85022;
 }
 
+.accordion-content-js.open {
+  max-height: inherit;
+  opacity: 1;
+  overflow: visible;
+  visibility: visible;
+}
+
 .accordion-content-js {
   position: relative;
   z-index: 1;
@@ -1769,20 +1785,11 @@ input::-webkit-inner-spin-button {
   opacity: 0;
   overflow: hidden;
   visibility: hidden;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: 0.9s;
+  -o-transition: 0.9s;
+  transition: 0.9s;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-}
-.accordion-content-js.open {
-  max-height: inherit;
-  opacity: 1;
-  overflow: visible;
-  visibility: visible;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
 }
 
 .js-text__more-button {
@@ -1795,6 +1802,7 @@ input::-webkit-inner-spin-button {
   color: var(--unnamed, #E85022);
   border-bottom: 1px solid;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 @media (min-width: 1024px) {
   .js-text__more-button:hover {
@@ -2652,9 +2660,21 @@ input::-webkit-inner-spin-button {
 .main-map.active .main-el.active {
   fill: #E85022;
 }
+@media screen and (max-width: 920px) {
+  .main-map svg {
+    width: 100%;
+  }
+}
 @media (max-width: 374px) {
   .main-map svg {
     width: 320px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .map-mobi svg {
+    width: 100%;
+    max-width: 100%;
   }
 }
 

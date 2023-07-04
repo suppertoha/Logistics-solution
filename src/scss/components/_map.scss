@@ -329,9 +329,24 @@
     }
   }
 
+  svg{
+    @media screen and (max-width: 920px) {
+      width: 100%;
+    }
+  }
+
   @include max375 {
     svg{
       width: 320px;
+    }
+  }
+}
+
+.map-mobi{
+  svg{
+    @media screen and (max-width: 920px) {
+      width: 100%;
+      max-width: 100%;
     }
   }
 }

@@ -68,6 +68,7 @@
         }
       }
     }
+
   }
 
   &__block{
@@ -169,8 +170,21 @@
     }
   }
 
-  &__inner{
+  &__header{
+    &.open{
 
+    @include min1024 {
+      &:hover{
+        .header-accordion__block{
+          background: var(--unnamed, #E85022);
+        }
+
+        .header-accordion__arrow{
+          background: #EB653D;
+        }
+      }
+    }
+    }
   }
 }
 
@@ -240,7 +254,7 @@
     }
 
     @include min1366 {
-      padding-top: 40px 20px;
+      padding-top: 40px;
     }
 
     h3{
