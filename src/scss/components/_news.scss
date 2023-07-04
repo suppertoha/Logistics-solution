@@ -36,6 +36,10 @@
     }
   }
 
+  &__contain{
+    max-height: 310px;
+  }
+
   &__top{
     width: 100%;
 
@@ -82,10 +86,6 @@
           margin: 0 auto;
         }
       }
-
-
-
-
     }
 
     &:not(:last-child){
@@ -192,6 +192,8 @@
     font-size: 16px;
     font-family: Inter;
     line-height: 148.523%;
+    overflow-y: auto;
+    padding-right: 10px;
 
     p{
 
