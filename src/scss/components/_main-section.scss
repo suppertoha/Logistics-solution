@@ -19,10 +19,6 @@
       @include min1366 {
         max-height: 100%;
       }
-
-      //@include min1600 {
-      //  max-height: 670px;
-      //}
     }
 
     @include min1024 {
@@ -133,9 +129,6 @@
       max-width: 570px;
     }
   }
-
-  &__animate {
-  }
 }
 
 .animation-search {
@@ -161,7 +154,6 @@
       margin-top: -110px;
       left: -50px;
     }
-
   }
 
   &__icon-start {
@@ -178,10 +170,6 @@
     left: 11px;
     top: 55px;
     flex-shrink: 0;
-    //min-height: 40px;
-    //margin-top: 100px;
-    //margin-left: 100px;
-
 
     @include min768 {
       height: 62px;
@@ -222,11 +210,13 @@
   &__icon-end {
     opacity: 0;
     flex-shrink: 0;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
+
     height: 88px;
     width: 68px;
     position: absolute;
@@ -244,7 +234,5 @@
       top: -180px;
       min-height: 180px;
     }
-
-
   }
 }

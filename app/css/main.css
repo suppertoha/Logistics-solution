@@ -916,6 +916,7 @@ input::-webkit-inner-spin-button {
     max-width: 570px;
   }
 }
+
 .animation-search {
   display: -webkit-box;
   display: -ms-flexbox;
