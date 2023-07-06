@@ -195,6 +195,16 @@
     overflow-y: auto;
     padding-right: 10px;
 
+    &::-webkit-scrollbar {
+      height: 100%;
+      width: 4px;
+      background: #d0d0d0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--unnamed, #E85022);
+    }
+
     p{
 
       &:not(:last-child){

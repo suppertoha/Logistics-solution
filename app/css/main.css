@@ -1773,13 +1773,6 @@ input::-webkit-inner-spin-button {
   background: #E85022;
 }
 
-.accordion-content-js.open {
-  max-height: inherit;
-  opacity: 1;
-  overflow: visible;
-  visibility: visible;
-}
-
 .accordion-content-js {
   position: relative;
   z-index: 1;
@@ -1788,11 +1781,17 @@ input::-webkit-inner-spin-button {
   opacity: 0;
   overflow: hidden;
   visibility: hidden;
-  -webkit-transition: 0.9s;
-  -o-transition: 0.9s;
-  transition: 0.9s;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  -webkit-transition: max-height 0.8s ease;
+  -o-transition: max-height 0.8s ease;
+  transition: max-height 0.8s ease;
+}
+.accordion-content-js.open {
+  max-height: inherit;
+  opacity: 1;
+  overflow: visible;
+  visibility: visible;
 }
 
 .js-text__more-button {
@@ -2018,6 +2017,14 @@ input::-webkit-inner-spin-button {
   line-height: 148.523%;
   overflow-y: auto;
   padding-right: 10px;
+}
+.block-news__text-modal::-webkit-scrollbar {
+  height: 100%;
+  width: 4px;
+  background: #d0d0d0;
+}
+.block-news__text-modal::-webkit-scrollbar-thumb {
+  background: var(--unnamed, #E85022);
 }
 .block-news__text-modal p:not(:last-child) {
   margin-bottom: 10px;
