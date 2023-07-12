@@ -2083,16 +2083,16 @@
                       <div class="block-news__left block-news__left--bg">
                         <div class="block-news__contain block-news__animation--bottom block-news__animation">
                           <div class="block-news__name">
-                            длинное Название новости в 2 строки
+                            Футбольная команда «Логистик» завоевала очередное золото.
                           </div>
 
                           <div class="block-news__description js-text">
                             <div class="js-text__content">
                               <p>
-                                Рыбатекст используется дизайнерами, проектировщиками Рыбатекст используется дизайнерами, проектировщиками Рыбатекст используется дизайнерами, проектировщиками
+                                29 июня 2023 г. проходила решающая игра в «Золотом финале» Весеннего чемпионата 7*7 БудниЛИГИ ЭЛИТ-Дивизиона 2023г., в которой наша команда одержала победу, что позволило ей занять первое место. Гордимся нашими ребятами!
                               </p>
                             </div>
-                            <button class="js-text__more-button" type="button" data-graph-path="modal-1">Подробнее</button>
+                            <button class="js-text__more-button" type="button" data-graph-path="news-second">Подробнее</button>
                           </div>
 
                           <div class="block-news__date">30.08.23</div>
@@ -2103,31 +2103,19 @@
                         <div class="block-news__animation--bottom block-news__animation">
                           <a
                           data-fslightbox="news"
-                          href="img/news-4-3.webp"
+                          href="img/news2.webp"
                           class="gallery__img"
                         >
                           <picture>
                             <source
-                              srcset="img/news-4-3.webp"
+                              srcset="img/news2.webp"
                               type="image/webp"
-                              media="(min-width: 1366px)"
-                            />
 
-                            <source
-                              srcset="img/news-4-2.webp"
-                              type="image/webp"
-                              media="(min-width: 768px)"
-                            />
-
-                            <source
-                              srcset="img/news-4-1.webp"
-                              type="image/webp"
-                              media="(min-width: 280px)"
                             />
 
                             <img
                               loading="lazy"
-                              src="img/news-4-1.jpg"
+                              src="img/news2.jpg"
                               class="image"
                               alt="img"
                             />
@@ -2186,39 +2174,6 @@
     </div>
 
 
-    <div class="graph-modal">
-      <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-1">
-        <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
-        <div class="graph-modal__content">
-          <div class="block-news">
-
-            <div class="block-news__top">
-              <img loading="lazy" src="img/modal.jpg" class="image" alt="img">
-            </div>
-            <div class="block-news__bottom">
-              <div class="block-news__contain">
-                <div class="block-news__head">
-                  <div class="block-news__name">Название новости</div>
-                  <div class="block-news__date">30.08.23</div>
-                </div>
-
-                <div class="block-news__text-modal ">
-                  <p>
-                    Рыбатекст используется дизайнерами, проектировщиками, фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым.
-                  </p>
-
-                  <p>
-
-                    Идейные соображения высшего порядка, а также высококачественный прототип будущего проекта играет определяющее значение для новых предложений. Не следует, однако, забывать, что выбранный нами инновационный путь.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    @include('partials/modal.html')
   </body>
 </html>

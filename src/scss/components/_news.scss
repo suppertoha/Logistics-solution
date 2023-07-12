@@ -22,8 +22,8 @@
 
   &__head{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    //flex-wrap: wrap;
+    //align-items: center;
     margin: 10px 0;
 
     @include min768 {
@@ -141,7 +141,7 @@
     margin-bottom: 5px;
 
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -276,6 +276,21 @@
 }
 
 .graph-modal{
+  .block-news__date{
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .block-news__name{
+    -webkit-line-clamp: inherit;
+  }
+
+  .block-news__top{
+    img{
+      object-fit: contain;
+    }
+  }
+
   &__container{
     padding: 30px 20px;
     max-width: 640px;
