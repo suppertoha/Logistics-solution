@@ -669,6 +669,13 @@ const handleScroll = () => {
   setActiveLink(currentSectionId);
 };
 window.addEventListener('scroll', handleScroll);
+const accordionItems = document.querySelectorAll('.accordion__item');
+accordionItems.forEach(item => {
+  item.addEventListener('click', function () {
+    const target = this; // Целевым элементом является сам элемент accordion__item
+    smoothScroll(target);
+  });
+});
 
 /***/ }),
 
