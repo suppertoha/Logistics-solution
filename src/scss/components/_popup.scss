@@ -14,16 +14,11 @@ body.lock {
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 100;
+  z-index: 1000;
   img{
     object-position: 50% 20%;
   }
 
-  margin: 50px 0;
-
-  @include max768 {
-    margin: 40px 0;
-  }
 }
 
 .popup__area {
