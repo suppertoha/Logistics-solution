@@ -10,7 +10,6 @@
     opacity: 0;
 
     img{
-      max-height: 470px;
 
       @include min768 {
         max-height: 660px;

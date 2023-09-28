@@ -7,7 +7,6 @@ const swiperOptions = {
   grabCursor: true,
   slidesPerView: 3,
   spaceBetween: 20,
-  loop: true,
   autoplay: {
     delay: 1,
     //disableOnInteraction: true,
@@ -27,7 +26,7 @@ const swiperOptions = {
     },
 
     1366: {
-      slidesPerView: '8',
+      slidesPerView: '7',
     },
 
   },

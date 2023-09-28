@@ -264,7 +264,7 @@ const tlMap = gsap.timeline({
 
 const tlSlider = gsap.timeline({
   scrollTrigger: {
-    trigger: ".slider",
+    trigger: ".main-slider",
     start: "top-=100% top+=400",
     end: "100%",
     once: true,
